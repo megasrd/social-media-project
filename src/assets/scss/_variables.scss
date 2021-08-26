@@ -1,0 +1,78 @@
+$main-color: #1da1f2;
+$disabled-color: #c2c2c2;
+
+%ripple-fx {
+    background-position: center;
+    transition: background 0.3s;
+    &:hover {
+        background: $main-color radial-gradient(circle, transparent 1%, #ffffff1e 1%) center/15000%;
+    }
+    &:active {
+        background-color: $main-color;
+        background-size: 100%;
+        transition: background 0s;
+    }
+}
+
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  label {
+    text-align: right;
+  }
+  .sorter {
+    padding: 0 0.4rem;
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    &:focus,
+    &:active,
+    &:hover {
+      border: 1px solid $main-color;
+      outline: none;
+    }
+    select {
+      padding: 0.6rem 1rem;
+      appearance: none;
+      border: none;
+      background: none;
+      &:focus,
+      &:active,
+      &:hover {
+        outline: none;
+      }
+    }
+  }
+}
+
+.bg-skeleton-sm {
+    background: linear-gradient(-45deg, rgb(198, 205, 211), rgb(122, 126, 129));
+    background-size: 400% 400%;
+    animation: gradient 1s ease infinite;
+    padding: 0.5rem;
+    width: 200px;
+    margin: 5px auto;
+  }
+  .bg-skeleton {
+    background: linear-gradient(-45deg, rgb(198, 205, 211), rgb(122, 126, 129)) !important;
+    background-size: 400% 400% !important;
+    animation: gradient 1s ease infinite !important;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
